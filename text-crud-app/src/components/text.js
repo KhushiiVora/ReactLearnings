@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "./button";
 import Input from "./input";
 
@@ -18,10 +18,6 @@ function Text(props) {
   const handleOnChange = (e) => {
     setEditText(e?.target?.value);
   };
-  const handleDelete = (index) => {
-    props.displayTexts.splice(index, 1);
-    //HOW TO RE RENDER AT THIS POINT
-  };
 
   return (
     <div>
@@ -38,9 +34,14 @@ function Text(props) {
               btnText="Save"
             />
           ) : (
-            <Button onClick={() => handleEdit(text, index)} btnText="Edit" />
+            <>
+              <Button onClick={() => handleEdit(text, index)} btnText="Edit" />
+              <Button
+                onClick={() => props.handleDelete(index)}
+                btnText="Delete"
+              />
+            </>
           )}
-          <Button onClick={() => handleDelete(index)} btnText="Delete" />
         </div>
       ))}
     </div>

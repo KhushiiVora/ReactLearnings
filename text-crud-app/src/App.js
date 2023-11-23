@@ -15,11 +15,22 @@ function App() {
       return [...prevState, text];
     });
   };
+  const handleDelete = (index) => {
+    const tempTexts = [...texts];
+    tempTexts.splice(index, 1);
+    setTexts(tempTexts);
+  };
   return (
     <div>
       <Input value={text} onChange={handleOnChange} />
-      <Button onClick={handleOnClick} btnText="Add" />
-      {!texts.length == 0 && <Text displayTexts={texts} />}
+      <Button
+        onClick={handleOnClick}
+        btnText="Add"
+        disabled={text ? false : true}
+      />
+      {!texts.length == 0 && (
+        <Text handleDelete={handleDelete} displayTexts={texts} />
+      )}
     </div>
   );
 }

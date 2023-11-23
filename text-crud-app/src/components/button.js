@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function Button(props) {
-  return <button onClick={props.onClick}>{props.btnText}</button>;
+  return (
+    <button disabled={props.disabled} onClick={props.onClick}>
+      {props.btnText}
+    </button>
+  );
 }
