@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Button from "./button";
-import Input from "./input";
+import Button from "./Button";
+import Input from "./Input";
 
 function Text(props) {
   const [elementToEdit, setElementToEdit] = useState("");

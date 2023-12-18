@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Input from "./components/input";
-import Button from "./components/button";
-import Text from "./components/text";
+import Input from "./components/Input";
+import Button from "./components/Button";
+import Text from "./components/Text";
 
 function App() {
   const [text, setText] = useState("");
