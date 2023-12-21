@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import PostCard from "./components/card";
+import PostCard from "./components/Card";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import CircularProgress from "@mui/material/CircularProgress";
